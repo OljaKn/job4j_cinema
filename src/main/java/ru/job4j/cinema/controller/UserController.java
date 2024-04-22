@@ -28,7 +28,7 @@ public class UserController {
             model.addAttribute("message", "Пользователь с такой почтой уже существует");
             return "user/register";
         }
-        return "redirect:/users";
+        return "redirect:/";
     }
 
     @GetMapping("/register")
@@ -50,7 +50,7 @@ public class UserController {
         }
         var session = request.getSession();
         session.setAttribute("user", userOptional.get());
-        return "redirect:/films";
+        return "redirect:/";
     }
 
     @GetMapping("/logout")
