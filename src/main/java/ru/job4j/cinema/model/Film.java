@@ -18,7 +18,7 @@ public class Film {
     private String name;
     private String description;
     private int year;
-    private String genreId;
+    private int genreId;
     private int minimalAge;
     private int durationInMinutes;
     private int fileId;
@@ -27,7 +27,7 @@ public class Film {
 
     }
 
-    public Film(int id, String name, String description, int year, String genreId, int minimalAge, int durationInMinutes, int fileId) {
+    public Film(int id, String name, String description, int year, int genreId, int minimalAge, int durationInMinutes, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -38,7 +38,7 @@ public class Film {
         this.fileId = fileId;
     }
 
-    public Film(String name, String description, int year, String genreId, int minimalAge, int durationInMinutes, int fileId) {
+    public Film(String name, String description, int year, int genreId, int minimalAge, int durationInMinutes, int fileId) {
         this.name = name;
         this.description = description;
         this.year = year;
@@ -80,11 +80,11 @@ public class Film {
         this.year = year;
     }
 
-    public String getGenreId() {
+    public int getGenreId() {
         return genreId;
     }
 
-    public void setGenreId(String genreId) {
+    public void setGenreId(int genreId) {
         this.genreId = genreId;
     }
 

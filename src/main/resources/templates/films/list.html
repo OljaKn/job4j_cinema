@@ -19,6 +19,7 @@
                             <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col"> </th>
                             <th scope="col">Наименование</th>
                             <th scope="col">Год</th>
                             <th scope="col">Жанр</th>
@@ -29,9 +30,11 @@
                         <tbody>
                         <tr th:each="film: ${films}">
                             <td th:text="${film.id}" />
-                            <td><a th:text="${film.name}" th:href="@{/films/{filmId}(filmId=${film.id})}"></a></td>
+                            <!--<td><a th:text="${film.name}" th:href="@{/films/{filmId}(filmId=${film.id})}"></a></td>-->
+                            <td><img th:src="@{/files/{fileId}(fileId=*{film.imageId})}" style="max-width: 100px; max-height: 100px;" /></td>
+                            <td th:text="${film.name}" />
                             <td th:text="${film.year}" />
-                            <td th:text="${film.genreId}" />
+                            <td th:text="${film.genre}" />
                             <td th:text="${film.minimalAge}" />
                             <td th:text="${film.durationInMinutes}" />
                         </tr>

@@ -14,17 +14,13 @@ import ru.job4j.cinema.service.GenreService;
 public class FilmController {
     private final FilmService filmService;
 
-    private final GenreService genreService;
-
-    public FilmController(FilmService filmService, GenreService genreService) {
+    public FilmController(FilmService filmService) {
         this.filmService = filmService;
-        this.genreService = genreService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public String getAll(Model model) {
         model.addAttribute("films", filmService.findAll());
-        model.addAttribute("genre", genreService.findAll());
         return "films/list";
     }
 
